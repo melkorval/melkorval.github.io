@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key and Touch Event Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #actionArea {
+            width: 300px;
+            height: 300px;
+            border: 2px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="actionArea">Tap or Press a Key</div>
+    <script>
+        // Function to handle both key press and touch events
+        function handleEvent(event) {
+            if (event.type === 'keydown') {
+                alert('Key pressed: ' + event.key);
+            } else if (event.type === 'touchstart') {
+                alert('Screen touched');
+            }
+        }
+
+        // Adding event listener for key press
+        window.addEventListener('keydown', handleEvent);
+
+        // Adding event listener for touch
+        document.getElementById('actionArea').addEventListener('touchstart', handleEvent);
+    </script>
+</body>
+</html>
