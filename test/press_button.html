@@ -31,9 +31,13 @@
         //whether it was a key press or a touch of the screen
         //and displays a message about it.
         function handleEvent(event) {
+            //If the event is a key
             if (event.type === 'keydown') {
                 alert('Key pressed: ' + event.key);
-            } else if (event.type === 'touchstart') {
+            } 
+            
+            //If the event is to tap the screen
+            else if (event.type === 'touchstart') {
                 alert('Screen touched');
             }
         }
