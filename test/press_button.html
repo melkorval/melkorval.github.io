@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Key and Touch Event Detection</title>
+    <!--See test in the link: https://melkorval.github.io/test/press_button.html-->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -26,6 +27,9 @@
     <div id="actionArea">Tap or Press a Key</div>
     <script>
         // Function to handle both key press and touch events
+        //The function verifies what event was performed 
+        //whether it was a key press or a touch of the screen
+        //and displays a message about it.
         function handleEvent(event) {
             if (event.type === 'keydown') {
                 alert('Key pressed: ' + event.key);
@@ -35,9 +39,14 @@
         }
 
         // Adding event listener for key press
+        //This line of code add an event listener to the entire 
+        //window for key presses. When any key is pressed, the
+        //"handleEvent" function is called.
         window.addEventListener('keydown', handleEvent);
 
         // Adding event listener for touch
+        //the HTML div element is selected by its id "actionArea" and then the event
+        //occurs is selected.
         document.getElementById('actionArea').addEventListener('touchstart', handleEvent);
     </script>
 </body>
