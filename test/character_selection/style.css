@@ -1,0 +1,30 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+#container_characters {
+    display: flex;
+    gap: 20px;
+}
+
+.character {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.character img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.character.selected {
+    border-color: #00f;
+    background-color: #eef;
+}
+git 
