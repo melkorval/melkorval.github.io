@@ -8,11 +8,29 @@
     <!--add css style file-->
     <link rel = "stylesheet" href = "style.css"> 
 
+    <!-- Call javascript script here-->
+    <!--defer: attribute ensures that the script is executed after the 
+    HTML document has been fully parsed-->
+    <script src="videogame.js" defer></script>
+
 </head>
 <body>
 
+    <!--Character selection
+    
+    1. Create the character selection section 
+
+    2. Since the creation of characters is going to be
+    through object-oriented programming, we are 
+    going to inject the characters to be selected from
+    Javascript
+
+    3. When you select the character and press the select button, 
+    the next section, which is the canvas, opens and the selected 
+    character appears on it-->
+
+
     <h1>Welcome to the Lithil Game</h1>
-    <!--1. Create the character selection section-->
     <section id="select_character">
         <h2>Choose your character</h2>
 
@@ -31,6 +49,14 @@
 
     <section id="mapCanvas">
         <h1>Welcome to our world</h1>
+
+        <!--create map canvas
+        
+        1. Define the size of the canvas map
+        2. Place the character on it
+        3. Place an image background on it
+        -->
+
         <canvas id = "map"> </canvas>
 
         <!--Buttons to move characters
@@ -47,14 +73,15 @@
         -->
         <div id = "move_buttons">
             <button id="button_up">Up</button>
+            <button id="button_down">Down</button>
+            <button id="button_right">Right</button>
+            <button id="button_left">Left</button>
         </div>
 
     </section>
 
 </body>
 
-<!--3. create javascript script for frontend
-and canvas map creation-->
 
 </html>
 
