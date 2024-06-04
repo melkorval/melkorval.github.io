@@ -23,6 +23,9 @@ This project is a small multiplayer video game where players can select a charac
 
 Make sure you have Node.js and npm installed on your system. You can download and install them from [Node.js official website](https://nodejs.org/).
 
+## Videogame website
+You can play the game [here](https://melkorval.github.io).
+
 ### Clone the Repository
 
 ```sh
@@ -30,4 +33,4 @@ git clone https://github.com/melkorval/melkorval.github.io.git
 cd melkorval.github.io.git
 
 
-Website: https://melkorval.github.io
+
