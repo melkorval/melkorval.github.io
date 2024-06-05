@@ -38,6 +38,8 @@ function displayCharacters() {
         const charImage = document.createElement('img');
         charImage.src = character.imageUrl;
         charImage.alt = character.name;
+        //It is description of the image in case
+        //it cannot be viewed
 
         //These lines create h3 and p elements for the 
         //character's name and description, respectively, 
@@ -53,6 +55,9 @@ function displayCharacters() {
         charDiv.appendChild(charImage);
         charDiv.appendChild(charName);
         charDiv.appendChild(charDescription);
+        //appendChild it is a method that allows adding new elements 
+        //to a parent container for this case is for div charDiv for the 
+        //characters
 
         // Append the character div to the container
         container.appendChild(charDiv);
@@ -67,10 +72,15 @@ function displayCharacters() {
     });
 
     // Add click event listener to the select button
+    //Logic: This adds a click event listener to each character div. When a character is clicked, 
+    //it removes the selected class from all character divs and adds it to the clicked one.
+    //Analogy: When you click on a picture frame on the bulletin board, 
+    //all frames are unmarked, and the clicked one gets a special mark indicating it is selected.
     document.getElementById('select_button').addEventListener('click', () => {
         // Get the selected character div
         const selectedCharacter = document.querySelector('.character.selected');
         // Display an alert with the selected character's name or prompt the user to select a character
+        //querySelector: Select elements according to their selector can be a class or an HTML element
         if (selectedCharacter) {
             alert(`You have selected: ${selectedCharacter.querySelector('h3').textContent}`);
         } else {
@@ -81,3 +91,5 @@ function displayCharacters() {
 
 // Ensure the DOM content is fully loaded before running the displayCharacters function
 document.addEventListener('DOMContentLoaded', displayCharacters);
+
+//DOM: Document Object Model
