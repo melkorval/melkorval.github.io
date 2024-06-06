@@ -65,17 +65,25 @@ function displayCharacters() {
         // Add click event listener to each character div for selection
         charDiv.addEventListener('click', () => {
             // Remove 'selected' class from all character divs
+            //Logic: This adds a click event listener to each character div. When a character is clicked, 
+            //it removes the selected class from all character divs and adds it to the clicked one.
+            //Analogy: When you click on a picture frame on the bulletin board, 
+            //all frames are unmarked, and the clicked one gets a special mark indicating it is selected.
+
             document.querySelectorAll('.character').forEach(c => c.classList.remove('selected'));
+            //Code explanation:
+            //document: This represents the whole HTML document loaded in the browser.
+            //querySelectorAll: This method selects all elements in the document with
+            //the class name "character".
+            //
+
+
             // Add 'selected' class to the clicked character div
             charDiv.classList.add('selected');
         });
     });
 
     // Add click event listener to the select button
-    //Logic: This adds a click event listener to each character div. When a character is clicked, 
-    //it removes the selected class from all character divs and adds it to the clicked one.
-    //Analogy: When you click on a picture frame on the bulletin board, 
-    //all frames are unmarked, and the clicked one gets a special mark indicating it is selected.
     document.getElementById('select_button').addEventListener('click', () => {
         // Get the selected character div
         const selectedCharacter = document.querySelector('.character.selected');
@@ -92,4 +100,6 @@ function displayCharacters() {
 // Ensure the DOM content is fully loaded before running the displayCharacters function
 document.addEventListener('DOMContentLoaded', displayCharacters);
 
-//DOM: Document Object Model
+//DOM: Document Object Model, it allows you to interact with the 
+//HTML from Javascript through methods such as querySelector or
+//getElementById
