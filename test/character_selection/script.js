@@ -44,10 +44,15 @@ function displayCharacters() {
         //These lines create h3 and p elements for the 
         //character's name and description, respectively, 
         //and set their text content.
-        const charName = document.createElement('h3');
+        const charName = document.createElement('h3'); 
+        //create the h3 element and then display the character's name in it.
         charName.textContent = character.name;
+        //place the character name in the created element h3
+
         const charDescription = document.createElement('p');
+        //create the p element
         charDescription.textContent = character.description;
+        //show p element the description of the character.
 
 
 
@@ -74,8 +79,14 @@ function displayCharacters() {
             //Code explanation:
             //document: This represents the whole HTML document loaded in the browser.
             //querySelectorAll: This method selects all elements in the document with
-            //the class name "character".
-            //
+            //the class name "character". It returns a NodeList (a collection of nodes) 
+            //representing all the elements that match the specified CSS selector.
+            //.forEach(c => ...): This method iterates over each element in the NodeList returned
+            //by "querySelectorAll". The "c" parameter represents each individual element (in this 
+            //case, each element with the class "character"), this is similar to the character i in a
+            //loop for.
+            //c.classList.remove('selected'): For each element c, this method removes 
+            //the selected class from the element's class list.
 
 
             // Add 'selected' class to the clicked character div
