@@ -1,5 +1,7 @@
 //Select all HTML elements to work with these
 
+//section select character
+
 //variable to find character object and save it.
 let search_object_character;
 let save_object_character;
@@ -17,9 +19,9 @@ class Character {
 // Create instances of the Character class for each character.
 //create character objects as variable.
 
-const Warrior = new Character("Warrior", "A strong and brave fighter.", "warrior.jpg");
-const Mage = new Character("Mage", "A wise and powerful sorcerer.", "mage.jpg");
-const Rogue = new Character("Rogue", "A stealthy and cunning thief.", "rogue.jpg")
+const Warrior = new Character("Warrior", "A strong and brave fighter.", "https://i.imgur.com/d2UE9mQ.png");
+const Mage = new Character("Mage", "A wise and powerful sorcerer.", "https://i.imgur.com/qMmmw5L.png");
+const Rogue = new Character("Rogue", "A stealthy and cunning thief.", "https://i.imgur.com/oKDESH4.png")
 
 //save to a character array.
 const characters = [Warrior, Mage, Rogue];
