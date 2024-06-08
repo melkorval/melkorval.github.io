@@ -98,7 +98,7 @@ function displayCharacters() {
     document.getElementById('select_button').addEventListener('click', () => {
         // Get the selected character div
         const selectedCharacter = document.querySelector('.character.selected');
-        // Display an alert with the selected character's name or prompt the user to select a character
+        //Display an alert with the selected character's name or prompt the user to select a character
         //querySelector: Select elements according to their selector can be a class or an HTML element
         if (selectedCharacter) {
             alert(`You have selected: ${selectedCharacter.querySelector('h3').textContent}`);
