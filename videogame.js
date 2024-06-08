@@ -113,10 +113,9 @@ function displayCharacters() {
             //pain it on the canvas with a function.
 
             //create a function that searches for the object based on its name and does not return that object.
-            search_object_character_f(selectedCharacter.querySelector('h3').textContent);
-            //alert(`You have selected: ${selectedCharacter.querySelector('h3').textContent}`);
-
-            //see results in terminal
+            search_object_character = selectedCharacter.querySelector('h3').textContent;
+            save_object_character = search_object_character_f(search_object_character);
+            console.log(save_object_character); //see results in terminal
 
         } else {
             alert('Please select a character first!');
@@ -124,8 +123,14 @@ function displayCharacters() {
     });
 }
 
-function search_object_character_f(character_object){
-    
+function search_object_character_f(search_object_character){
+    //create a loop to search for the character object according to its 
+    //name and return this object.
+    for(const character of characters){
+        if(character.name == search_object_character){
+            return character;
+        }
+    }
 }
 
 // Ensure the DOM content is fully loaded before running the displayCharacters function
