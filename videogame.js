@@ -1,11 +1,34 @@
 //Select all HTML elements to work with these
 
 //section select character
+section_select_character = document.getElementById("select_character");
+
+//div container characters
+div_container_characters = document.getElementById("container_characters")
+
+//select button
+select_button = document.getElementById("select_button");
+
+//section canvas
+section_map_canvas = document.getElementById("mapCanvas");
+
+//map canvas
+map = document.getElementById("map");
+
+//div move buttons
+div_move_buttons = document.getElementById("move_buttons");
+
+//all move buttons
+button_up = document.getElementById("button_up");
+button_down = document.getElementById("button_down");
+button_right = document.getElementById("button_right");
+button_left = document.getElementById("button_left");
+
+//Pending task: Make the canvas load after character selection.
 
 //variable to find character object and save it.
 let search_object_character;
 let save_object_character;
-
 
 // Define the Character class with properties for name, description, and image URL
 class Character {
@@ -27,6 +50,8 @@ const Rogue = new Character("Rogue", "A stealthy and cunning thief.", "https://i
 const characters = [Warrior, Mage, Rogue];
 
 // Function to inject character cards into the container
+//Problem: Find a solution that when selecting a character the player can no 
+//longer select any more, that the other options are disabled and the canvas is loaded.
 function displayCharacters() {
     // Get the container element where characters will be displayed
 
