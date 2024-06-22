@@ -58,9 +58,6 @@ function startVideogame(){
 
     //hide canvas map section
     section_map_canvas.style.display = 'none';
-    //show select character section
-    section_select_character.style.display = 'flex';
-
     displayCharacters();
 }
 
@@ -69,6 +66,10 @@ function startVideogame(){
 //Problem: Find a solution that when selecting a character the player can no 
 //longer select any more, that the other options are disabled and the canvas is loaded.
 function displayCharacters(){
+
+    //show select character section
+    section_select_character.style.display = 'flex';
+
     // Get the container element where characters will be displayed
 
     //That is, the container is selected by its ID where the characters
@@ -181,7 +182,7 @@ function search_object_character_f(search_object_character){
 
 //Definition of the canvas map function
 function startCanvas(){
-    
+
 }
 
 // Ensure the DOM content is fully loaded before running the displayCharacters function
