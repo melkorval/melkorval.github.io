@@ -55,8 +55,12 @@ const characters = [Warrior, Mage, Rogue];
 
 
 function startVideogame(){
+
     //hide canvas map section
     section_map_canvas.style.display = 'none';
+    //show select character section
+    section_select_character.style.display = 'flex';
+
     displayCharacters();
 }
 
@@ -161,8 +165,8 @@ function displayCharacters(){
         }
     });
 
-    //show canvas map section
-    section_map_canvas.style.display = 'flex';
+    //create function canvas map
+    startCanvas();
 }
 
 function search_object_character_f(search_object_character){
@@ -173,6 +177,11 @@ function search_object_character_f(search_object_character){
             return character;
         }
     }
+}
+
+//Definition of the canvas map function
+function startCanvas(){
+    
 }
 
 // Ensure the DOM content is fully loaded before running the displayCharacters function
