@@ -49,10 +49,22 @@ const Rogue = new Character("Rogue", "A stealthy and cunning thief.", "https://i
 //save to a character array.
 const characters = [Warrior, Mage, Rogue];
 
+
+//create functions for game start, character selection and 
+//map canvas to show each section after another
+
+
+function startVideogame(){
+    //hide canvas map section
+    section_map_canvas.style.display = 'none';
+    displayCharacters();
+}
+
+
 // Function to inject character cards into the container
 //Problem: Find a solution that when selecting a character the player can no 
 //longer select any more, that the other options are disabled and the canvas is loaded.
-function displayCharacters() {
+function displayCharacters(){
     // Get the container element where characters will be displayed
 
     //That is, the container is selected by its ID where the characters
@@ -148,6 +160,9 @@ function displayCharacters() {
             alert('Please select a character first!');
         }
     });
+
+    //show canvas map section
+    section_map_canvas.style.display = 'flex';
 }
 
 function search_object_character_f(search_object_character){
