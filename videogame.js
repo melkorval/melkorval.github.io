@@ -53,19 +53,13 @@ const characters = [Warrior, Mage, Rogue];
 //create functions for game start, character selection and 
 //map canvas to show each section after another
 
-
-function startVideogame(){
-
-    //hide canvas map section
-    section_map_canvas.style.display = 'none';
-    displayCharacters();
-}
-
-
 // Function to inject character cards into the container
 //Problem: Find a solution that when selecting a character the player can no 
 //longer select any more, that the other options are disabled and the canvas is loaded.
 function displayCharacters(){
+
+    //hide canvas map section
+    section_map_canvas.style.display = 'none';
 
     //show select character section
     section_select_character.style.display = 'block';
@@ -162,13 +156,13 @@ function displayCharacters(){
             save_object_character = search_object_character_f(search_object_character);
             console.log(save_object_character); //see results in terminal
 
+            //After selecting the character load the canvas function
+            startCanvas();
         } else {
             alert('Please select a character first!');
         }
     });
 
-    //create function canvas map
-    startCanvas();
 }
 
 function search_object_character_f(search_object_character){
@@ -183,6 +177,10 @@ function search_object_character_f(search_object_character){
 
 //Definition of the canvas map function
 function startCanvas(){
+    //show canvas map section
+    section_map_canvas.style.display = 'block';
+    //hide select character section
+    section_select_character.style.display = 'none';
 
 }
 
