@@ -68,7 +68,8 @@ function startVideogame(){
 function displayCharacters(){
 
     //show select character section
-    section_select_character.style.display = 'flex';
+    section_select_character.style.display = 'block';
+    //block: Occupy the full width of the parent element
 
     // Get the container element where characters will be displayed
 
