@@ -46,10 +46,42 @@ let save_object_character;
 
 // Define the Character class with properties for name, description, and image URL
 class Character {
+    //To create the canvas map it is necessary to add to the object class
+    //the parameters: Character position (x, y), width and height, rectangle 
+    //images (image of the character in a rectangle), player id and player speed. 
     constructor(name, description, imageUrl) {
         this.name = name;
         this.description = description;
         this.imageUrl = imageUrl;
+
+        //Character position
+        this.x = x;
+        this.y = y;
+
+        //width and height of the character in the map canvas
+        this.width = width;
+        this.height = height;
+
+        //create an image object for our character to appear on the canvas.
+        this.image_rect = new Image();
+        this.image_rect.src = imageUrl;
+
+        //User the "onload" event to ensure that the images are fully 
+        //loaded
+        this.image_rect.onload = () => {
+            //All functions where are used should be listed here
+            startCanvas();            
+            
+            //function execution interval
+            drawing_interval();
+
+            //function drawing character
+            drawing_character();
+        }
+
+        //player id 
+        this.id = id;        
+
     }
 }
 
