@@ -15,6 +15,20 @@ section_map_canvas = document.getElementById("mapCanvas");
 //map canvas
 map = document.getElementById("map");
 
+//indicate that we want to represent a 2D map
+let drawing = map.getContext("2d");
+
+//we create a time interval for our character to update
+//in the canvas map.
+let execution_interval;
+
+//we create a variable for background image of the canvas, 
+//important to use the "onload" event to ensure that the image
+//is loaded completely before starting any other action.
+
+let background_map = new Image(); //create object image
+background_map.src = 'https://i.imgur.com/pdIMi1i.png';
+
 //div move buttons
 div_move_buttons = document.getElementById("move_buttons");
 
