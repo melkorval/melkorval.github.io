@@ -66,6 +66,10 @@ class Character {
         this.image_rect = new Image();
         this.image_rect.src = imageUrl;
 
+        //character speed 
+        this.velocityX = 0;
+        this.velocityY = 0;
+
         //User the "onload" event to ensure that the images are fully 
         //loaded
         this.image_rect.onload = () => {
@@ -88,9 +92,9 @@ class Character {
 // Create instances of the Character class for each character.
 //create character objects as variable.
 
-const Warrior = new Character("Warrior", "A strong and brave fighter.", "https://i.imgur.com/d2UE9mQ.png" 4, 4, 50, 50);
-const Mage = new Character("Mage", "A wise and powerful sorcerer.", "https://i.imgur.com/qMmmw5L.png" 4, 4, 50, 50);
-const Rogue = new Character("Rogue", "A stealthy and cunning thief.", "https://i.imgur.com/oKDESH4.png" 4, 4, 50, 50)
+const Warrior = new Character("Warrior", "A strong and brave fighter.", "https://i.imgur.com/d2UE9mQ.png", 4, 4, 50, 50);
+const Mage = new Character("Mage", "A wise and powerful sorcerer.", "https://i.imgur.com/qMmmw5L.png", 4, 4, 50, 50);
+const Rogue = new Character("Rogue", "A stealthy and cunning thief.", "https://i.imgur.com/oKDESH4.png", 4, 4, 50, 50)
 
 //save to a character array.
 const characters = [Warrior, Mage, Rogue];
@@ -241,8 +245,15 @@ function startCanvas(){
     drawing_character();
 
     //functions movement on the map.
-    
 
+    //case of using the keyboard dates.
+    div_move_buttons.addEventListener('keydown', move_character);
+
+    //in case touch screens are used.
+    button_up.addEventListener('touchstart', up_move);
+    button_down.addEventListener('touchstart', down_move);
+    button_right.addEventListener('touchstart', right_move);
+    button_left.addEventListener('touchstart', left_move);
 }
 
 function drawing_interval(){
@@ -251,8 +262,84 @@ function drawing_interval(){
 }
 
 function drawing_character(){
+
     //Dimensions of the map where the player appears
-    map.
+    map.width = 800;
+    map.height = 500;
+
+    //Character speed definition
+    save_object_character.x = save_object_character.x + save_object_character.velocityX;
+    save_object_character.y = save_object_character.y + save_object_character.velocityY;
+
+    //When this update character clears the canvas
+    drawing.clearRect(0, 0, map.width, map.height);
+
+    //show map background
+    drawing.drawImage(
+        background_map,
+        0,
+        0,
+        map.width,
+        map.height
+    );
+    
+    //show the character on the map
+    drawing.drawImage(
+        save_object_character.image_rect,
+        save_object_character.x,
+        save_object_character.y,
+        save_object_character.width,
+        save_object_character.height
+    );
+}
+
+function move_character(event){
+    //Identify the type of key used and call the function for that motion
+    switch (event.key) {
+
+        case 'ArrowUp':
+            up_move();
+            break;
+
+        case 'ArrowUp':
+            down_move();
+            break;
+
+        case 'ArrowUp':
+            right_move();
+            break;
+
+        case 'ArrowUp':
+            left_move();
+            break;
+    
+        default:
+            break;
+    }
+}
+
+//functions move all directions
+
+function up_move(){
+    save_object_character.velocityY = -5;
+}
+
+function down_move(){
+    save_object_character.velocityY = 5;
+}
+
+function right_move(){
+    save_object_character.velocityX = 5;
+}
+
+function left_move(){
+    save_object_character.velocityX = -5;
+}
+
+//stop motion
+function stop_motion(){
+    save_object_character.velocityX = 0;
+    save_object_character.velocityY = 0;
 }
 
 // Ensure the DOM content is fully loaded before running the displayCharacters function
