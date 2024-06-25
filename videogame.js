@@ -49,7 +49,7 @@ class Character {
     //To create the canvas map it is necessary to add to the object class
     //the parameters: Character position (x, y), width and height, rectangle 
     //images (image of the character in a rectangle), player id and player speed. 
-    constructor(name, description, imageUrl) {
+    constructor(name, description, imageUrl, x, y, width, height) {
         this.name = name;
         this.description = description;
         this.imageUrl = imageUrl;
@@ -88,9 +88,9 @@ class Character {
 // Create instances of the Character class for each character.
 //create character objects as variable.
 
-const Warrior = new Character("Warrior", "A strong and brave fighter.", "https://i.imgur.com/d2UE9mQ.png");
-const Mage = new Character("Mage", "A wise and powerful sorcerer.", "https://i.imgur.com/qMmmw5L.png");
-const Rogue = new Character("Rogue", "A stealthy and cunning thief.", "https://i.imgur.com/oKDESH4.png")
+const Warrior = new Character("Warrior", "A strong and brave fighter.", "https://i.imgur.com/d2UE9mQ.png" 4, 4, 50, 50);
+const Mage = new Character("Mage", "A wise and powerful sorcerer.", "https://i.imgur.com/qMmmw5L.png" 4, 4, 50, 50);
+const Rogue = new Character("Rogue", "A stealthy and cunning thief.", "https://i.imgur.com/oKDESH4.png" 4, 4, 50, 50)
 
 //save to a character array.
 const characters = [Warrior, Mage, Rogue];
@@ -194,10 +194,12 @@ function displayCharacters(){
         //Display an alert with the selected character's name or prompt the user to select a character
         //querySelector: Select elements according to their selector can be a class or an HTML element
         if (selectedCharacter) {
-            //we must save the selected character as object in a variable in the form of an object and then
+            //we must save the selected character as object 
+            //in a variable in the form of an object and then
             //pain it on the canvas with a function.
 
-            //create a function that searches for the object based on its name and does not return that object.
+            //create a function that searches for the object based 
+            //on its name and does not return that object.
             search_object_character = selectedCharacter.querySelector('h3').textContent;
             save_object_character = search_object_character_f(search_object_character);
             console.log(save_object_character); //see results in terminal
@@ -228,6 +230,29 @@ function startCanvas(){
     //hide select character section
     section_select_character.style.display = 'none';
 
+    //Here we create the functions of the character painting, character
+    //update interval and movement on the map. 
+
+
+    //function update interval
+    drawing_interval();
+
+    //function drawing character
+    drawing_character();
+
+    //functions movement on the map.
+    
+
+}
+
+function drawing_interval(){
+    //Execute paint character function every 50 miliseconds.
+    interval_time = setInterval(drawing_character, 50); 
+}
+
+function drawing_character(){
+    //Dimensions of the map where the player appears
+    map.
 }
 
 // Ensure the DOM content is fully loaded before running the displayCharacters function
