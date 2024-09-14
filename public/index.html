@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Sharing Site</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Video Sharing Site</h1>
+    </header>
+
+    <main>
+        <section id="upload-section">
+            <h2>Upload a Video</h2>
+            <form id="upload-form">
+                <input type="file" id="video-file" accept="video/*" required>
+                <input type="text" id="video-title" placeholder="Video Title" required>
+                <button type="submit">Upload</button>
+            </form>
+        </section>
+
+        <section id="video-player">
+            <h2>Current Video</h2>
+            <video id="current-video" controls></video>
+            <div id="video-actions">
+                <button id="like-button">Like</button>
+                <button id="dislike-button">Dislike</button>
+            </div>
+            <p id="like-count">Likes: 0</p>
+            <p id="dislike-count">Dislikes: 0</p>
+        </section>
+
+        <section id="video-list">
+            <h2>All Videos</h2>
+            <ul id="videos"></ul>
+        </section>
+    </main>
+
+    <script src="/script.js"></script>
+</body>
+</html>
