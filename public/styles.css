@@ -1,0 +1,9 @@
+body {
+    background-color: #09021a;
+    color: white;
+}
+
+.div_video {
+    display: flex; /* Activa el modo flexbox */
+    justify-content: center; /* Centra los elementos hijos horizontalmente */
+}
