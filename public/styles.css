@@ -6,4 +6,56 @@ body {
 .div_video {
     display: flex; /* Activa el modo flexbox */
     justify-content: center; /* Centra los elementos hijos horizontalmente */
+    margin-bottom: 20px; /*margen inferior del contenedor donde se encuentra el video */ 
+}
+
+#video-actions {
+    display: flex;
+    justify-content: center;
+}
+
+.likebutton, .dislikebutton {
+    width: 80px;
+    height: 40px;
+    font-size: 2em;
+    /*solo hacer aparece el emoji sin margenes o background*/ 
+    background: none;
+    border: none;
+
+    /* Hacer que el cursor cambie a puntero indicando
+    interaccion */
+    cursor: pointer;
+
+    /*crear un transformacion en un determinados segundos */
+    transform: transform 0.3s ease;
+}
+
+
+/*crear la animacion de cuando se haga un click a like o dislike 
+cambie en emoji*/
+.likebutton:hover {
+    /*cuando el cursor se coloque sobre el icono hacer
+    un efecto de acercamiento por medio de cambiar el tamaño*/
+    transform: scale(1.2);
+}
+
+.dislikebutton:hover {
+    transform: scale(1.2);
+}
+
+
+.likebutton.liked {
+    animation: pulse 0.5s ease-in-out;
+}
+
+.dislikebutton.liked {
+    animation: pulse 0.5s ease-in-out;
+}
+
+/* Luego de obtener el liked crear una animacion para cambiar de emoji,
+primero animacion lenta, rapida y luego lenta otra vez*/
+@keyframes pulse {
+   0% { transform: scale(1); }
+   50% { transform: scale(1.3); }
+   100% { transform: scale(1); }
 }

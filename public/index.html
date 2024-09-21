@@ -11,7 +11,7 @@
         <h1>Video Sharing Site</h1>
     </header>
 
-    <main>
+    <main> <!--es un etiqueta para indicar el contenido principal del documento -->
        
         <!--Seccion del video aqui debemos añadir los botones de like y dislike -->
         <section id="video-player" class="section_video">
@@ -24,15 +24,13 @@
             </div>
 
             <div id="video-actions">
-                <button id="like-button">Like</button>
-                <button id="dislike-button">Dislike</button>
+                <button class="likebutton" id="like-button" onclick="toggleLike(this)">👍</button>
+                <button class="dislikebutton" id="dislike-button" onclick="toggledisLike(this)">👎</button>
             </div>
             <!--Programar contador de Likes y Dislikes -->
-            <p id="like-count">Likes: 0</p>
-            <p id="dislike-count">Dislikes: 0</p>
         </section>
     </main>
 
-    <script src="/script.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
