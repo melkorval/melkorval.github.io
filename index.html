@@ -28,18 +28,24 @@
                     width="640" height="360" frameborder="0"    allowfullscreen></iframe>
             </div>
 
-            <div id="video-actions">
-                <button class="likebutton" id="like-button"
-                    onclick="toggleLike(this)">👍</button>
-                <button class="dislikebutton" id="dislike-button"
-                    onclick="toggledisLike(this)">👎</button>
+
+            
+        <div id="video-actions">
+            <!-- Like button with counter below -->
+            <div class="action-button">
+                <button class="likebutton" id="like-button" onclick="toggleLike(this)">👍</button>
+                <span id="like-count"></span> <!-- Counter below the like button -->
             </div>
-            <!--Programar contador de Likes y Dislikes -->
-            <!--Mostrar contador de likes y dislikes esto se programa en javascript-->
-            <div id="counters-display">
-                <span id="like-count">Likes: 0</span>
-                <span id="dislike-count">Dislikes: 0</span>
+
+            <!-- Dislike button with counter below -->
+            <div class="action-button">
+                <button class="dislikebutton" id="dislike-button" onclick="toggledisLike(this)">👎</button>
+                <span id="dislike-count"></span> <!-- Counter below the dislike button -->
             </div>
+        </div>
+
+
+
         </section>
     </main>
 

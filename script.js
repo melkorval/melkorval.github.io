@@ -53,8 +53,8 @@ function handleLike() {
     // documento JSON
     .then(data => {
         // Actualizar el contador de like y dislikes para mostrar en HTML.
-        like_count_display.textContent = `Likes: ${data.likes}`;
-        dislike_count_display.textContent = `Dislikes: ${data.dislikes}`;
+        like_count_display.textContent = `${data.likes}`;
+        dislike_count_display.textContent = `${data.dislikes}`;
     })
     .catch(error => console.error('Error:', error)); //notificar cualquier error.
 }
@@ -68,8 +68,8 @@ function handleDislike() {
     .then(response => response.json()) // Parse the JSON response
     .then(data => {
         // Update the dislike count display with the new count from the server
-        like_count_display.textContent = `Likes: ${data.likes}`;
-        dislike_count_display.textContent = `Dislikes: ${data.dislikes}`;
+        like_count_display.textContent = `${data.likes}`;
+        dislike_count_display.textContent = `${data.dislikes}`;
     })
     .catch(error => console.error('Error:', error));
 }
