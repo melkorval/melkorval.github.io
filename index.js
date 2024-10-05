@@ -23,6 +23,7 @@ const cors = require('cors') //Para permitir solucitudes de diferentes dominios
 //datos.
 const app = express();
 
+app.use(express.static('public'))
 app.use(cors()); //habilitar el CORS, solo permite hacer solicitudes HTTP desde
 //http://localhost:3000 no desde otro dominio como http://localhost:4000
 
@@ -74,9 +75,13 @@ app.post('/dislike', (req, res) => {
 
 //escuchando solucitudes al puerto 3000 indicando que esta disponible
 //para recibir clientes.
+
+//hacer que usuarios externos a mi servidor local pueda acceder a este: 
 app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+  console.log(`Server running`);
 });
+
+// 0.0.0.0 escuchar todas redes 
 
 
 //para correr el servidor:

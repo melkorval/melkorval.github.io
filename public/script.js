@@ -46,7 +46,7 @@ function handleLike() {
     //Enviar al servidor a la url http://localhost:3000/like el like al 
     //video esto se hace en una solicitud POST por que se envian datos
     //al servidor.
-    fetch('http://localhost:3000/like', {
+    fetch('http://10.20.68.101:3000/like', {
         method: 'POST'
     })
     .then(response => response.json()) // Enviar la informacion en un formato de 
@@ -62,7 +62,7 @@ function handleLike() {
 // Function to handle Dislike button click
 function handleDislike() {
     // Send a POST request to the /dislike endpoint
-    fetch('http://localhost:3000/dislike', {
+    fetch('http://10.20.68.101:3000/dislike', {
         method: 'POST'
     })
     .then(response => response.json()) // Parse the JSON response
