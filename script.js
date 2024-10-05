@@ -2,7 +2,7 @@
 const like_button = document.getElementById("like-button");
 const dislike_button = document.getElementById("dislike-button")
 
-// Referencing the counters (Create these elements in your HTML to display the counts)
+//Hacer referencia a los elementos HTML donde parece el conteo de likes y dislikes 
 const like_count_display = document.getElementById("like-count");
 const dislike_count_display = document.getElementById("dislike-count");
 
@@ -41,19 +41,22 @@ function disable_button(clickbutton, otherbutton){
 
 //hacer solicitudes al backend
 
-// Function to handle Like button click
+//funcion para enviar al servidor cuando se da like al video
 function handleLike() {
-    // Send a POST request to the /like endpoint
+    //Enviar al servidor a la url http://localhost:3000/like el like al 
+    //video esto se hace en una solicitud POST por que se envian datos
+    //al servidor.
     fetch('http://localhost:3000/like', {
         method: 'POST'
     })
-    .then(response => response.json()) // Parse the JSON response
+    .then(response => response.json()) // Enviar la informacion en un formato de 
+    // documento JSON
     .then(data => {
-        // Update the like count display with the new count from the server
+        // Actualizar el contador de like y dislikes para mostrar en HTML.
         like_count_display.textContent = `Likes: ${data.likes}`;
         dislike_count_display.textContent = `Dislikes: ${data.dislikes}`;
     })
-    .catch(error => console.error('Error:', error));
+    .catch(error => console.error('Error:', error)); //notificar cualquier error.
 }
 
 // Function to handle Dislike button click
@@ -71,7 +74,8 @@ function handleDislike() {
     .catch(error => console.error('Error:', error));
 }
 
-// Add event listeners to the buttons
+// Escuchar se da click a los botones de likes y dislikes y en tal caso 
+// enviar la informacion en solicitudes POST. 
 like_button.addEventListener('click', handleLike);
 dislike_button.addEventListener('click', handleDislike);
 
