@@ -2,14 +2,14 @@
 const like_button = document.getElementById("like-button");
 const dislike_button = document.getElementById("dislike-button")
 
-// Referencing the counters (Create these elements in your HTML to display the counts)
+// referencia de los contadores de que aparecen en HTML.
 const like_count_display = document.getElementById("like-count");
 const dislike_count_display = document.getElementById("dislike-count");
 
 /*funciones para hacer los cambios cuando en los emojis si se da like o dislike */
 function toggleLike(button) {
     /*verifcar si tiene ya un like y agregrar la elerta liked*/
-    
+
     /*hacer los repectivos cambios de emoji si tiene un liked o dejar
     igual en caso contrario*/
     button.classList.toggle('liked');
@@ -41,37 +41,37 @@ function disable_button(clickbutton, otherbutton){
 
 //hacer solicitudes al backend
 
-// Function to handle Like button click
+//funcion para enviar al backend los likes que han dado lo usuarios
 function handleLike() {
-    // Send a POST request to the /like endpoint
+    //Los likes se envian a la url especificada como una solicitud POST, ya que se envian+
+    //datos al servidor
     fetch('http://localhost:3000/like', {
         method: 'POST'
     })
-    .then(response => response.json()) // Parse the JSON response
+    .then(response => response.json())//los datos se envian en un archivo JSON.
     .then(data => {
-        // Update the like count display with the new count from the server
+        //actualizar contador de likes
         like_count_display.textContent = `Likes: ${data.likes}`;
         dislike_count_display.textContent = `Dislikes: ${data.dislikes}`;
     })
-    .catch(error => console.error('Error:', error));
+    .catch(error => console.error('Error:', error)); //notificar cualquier error.
 }
 
-// Function to handle Dislike button click
+
 function handleDislike() {
-    // Send a POST request to the /dislike endpoint
     fetch('http://localhost:3000/dislike', {
         method: 'POST'
     })
-    .then(response => response.json()) // Parse the JSON response
+    .then(response => response.json())
     .then(data => {
-        // Update the dislike count display with the new count from the server
         like_count_display.textContent = `Likes: ${data.likes}`;
         dislike_count_display.textContent = `Dislikes: ${data.dislikes}`;
     })
     .catch(error => console.error('Error:', error));
 }
 
-// Add event listeners to the buttons
+// Escuchar los botones de likes y dislike para enviar al servidor esta informacion
+// al llamar a las funciones handleLike y handleDislike
 like_button.addEventListener('click', handleLike);
 dislike_button.addEventListener('click', handleDislike);
 
