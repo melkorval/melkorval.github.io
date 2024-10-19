@@ -39,6 +39,7 @@ function disable_button(clickbutton, otherbutton){
     otherbutton.disabled = true;
 }
 
+
 //hacer solicitudes al backend
 
 //funcion para enviar al servidor cuando se da like al video
